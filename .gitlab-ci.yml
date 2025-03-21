@@ -1,0 +1,20 @@
+stages:
+  - deploy
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying to local server..."
+    - cd /var/www/CV/cv/ # Замените на путь к вашему проекту
+    - echo "зашли в папку"
+    - pwd
+    - git config --global credential.helper store
+    - echo "https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.mopsiky.ru" > ~/.git-credentials
+    - git fetch --all
+    - git reset --hard origin/main
+    - git pull origin main
+    - whoami
+    - sudo systemctl reload nginx
+    - echo "Deployment completed."
+  only:
+    - main
