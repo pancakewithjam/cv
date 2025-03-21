@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.contacts a, .contacts a[href^="tel"] {
+    display: block;
+    color: white;
+    margin: 5px 0;
+    text-decoration: none;
+    position: relative; /* Для анимации */
+    transition: color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+}
+
+.contacts a:hover, .contacts a[href^="tel"]:hover {
+    color: #3498db; /* Изменение цвета при наведении */
+    transform: translateX(5px); /* Легкое смещение вбок */
+}
+
+.contacts a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.contacts a:hover::after {
+    width: 100%; /* Подчеркивание при наведении */
+}
+
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.photo-carousel img {
+    width: 100%;
+    display: none;
+    max-width: 500px;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Анимация появления */
+}
+
+.photo-carousel img.active {
+    display: block;
+    opacity: 1; /* Показываем изображение с плавным эффектом */
+    transform: translateX(0); /* В начальной позиции */
+}
+
+.photo-carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.photo-carousel .prev {
+    left: 0;
+}
+
+.photo-carousel .next {
+    right: 0;
+}
+/* Стили для карусели сертификатов */
+.certificate-carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.certificate-carousel .carousel-images img {
+    width: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.certificate-carousel .carousel-images img.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.certificate-carousel .description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    opacity: 1; /* Скрыто по умолчанию */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.certificate-carousel .description.visible {
+    opacity: 1; /* Показываем описание, когда оно нужно */
+}
+
+.certificate-carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    z-index: 1;
+}
+
+.certificate-carousel .prev {
+    left: 0;
+}
+
+.certificate-carousel .next {
+    right: 0;
+}

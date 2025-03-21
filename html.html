@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резюме</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Иван Тютин</h1>
+  <div class="contacts">
+    <a href="https://t.me/pancakewithjam">Telegram</a>
+    <a href="https://wa.me/79999655930">WhatsApp</a>
+    <a href="mailto:tyutin.ia98@gmail.com">Email</a>
+    <a href="tel:+79999655930">+7 999 965-59-30</a>
+  </div>
+</header>
+
+<section id="skills">
+  <h2>Навыки</h2>
+  <p>Ваши навыки...</p>
+</section>
+
+<section id="education">
+  <h2>Образование</h2>
+  <p>Ваше образование...</p>
+</section>
+
+<section id="experience">
+  <h2>Опыт работы</h2>
+  <p>Ваш опыт работы...</p>
+</section>
+
+<section id="certificates">
+  <h2>Сертификаты</h2>
+  <div class="certificate-carousel">
+    <button class="prev">&#10094;</button>
+    <div class="carousel-images">
+      <img src="photo/cert1.jpg" alt="Сертификат 1" class="active">
+      <img src="photo/cert2.jpg" alt="Сертификат 2">
+      <img src="photo/cert3.png" alt="Сертификат 3">
+    </div>
+    <div class="description">
+      <p>Описание для Сертификат 1</p>
+    </div>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Обо мне</h2>
+  <p>Краткая информация о вас...</p>
+  <div class="photo-carousel">
+    <button class="prev">&#10094;</button>
+    <img src="/photo/photo1.png" alt="Фото 1" class="active">
+    <img src="/photo/photo2.jpg" alt="Фото 2">
+    <img src="/photo/photo3.png" alt="Фото 3">
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Мои проекты</h2>
+  <ul>
+    <li><a href="https://github.com/yourproject1">Проект 1</a></li>
+    <li><a href="https://github.com/yourproject2">Проект 2</a></li>
+    <li><a href="https://github.com/yourproject3">Проект 3</a></li>
+  </ul>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+
+    // Карусель фото
+    let photoIndex = 0;
+    const photos = document.querySelectorAll(".photo-carousel img");
+    const photoPrev = document.querySelector(".photo-carousel .prev");
+    const photoNext = document.querySelector(".photo-carousel .next");
+
+    photoPrev.addEventListener("click", () => {
+      photos[photoIndex].classList.remove("active");
+      photoIndex = (photoIndex - 1 + photos.length) % photos.length;
+      photos[photoIndex].classList.add("active");
+    });
+    photoNext.addEventListener("click", () => {
+      photos[photoIndex].classList.remove("active");
+      photoIndex = (photoIndex + 1) % photos.length;
+      photos[photoIndex].classList.add("active");
+    });
+
+    // Карусель сертификатов с описанием
+    const descriptions = [
+      "мой сертификат 1",
+      "мой сертификатик два",
+      "Описание для Сертификат 3"
+    ];
+    let certIndex = 0;
+    const certificates = document.querySelectorAll(".certificate-carousel .carousel-images img");
+    const certPrev = document.querySelector(".certificate-carousel .prev");
+    const certNext = document.querySelector(".certificate-carousel .next");
+    const certDescription = document.querySelector(".certificate-carousel .description p");
+
+    const updateDescription = () => {
+      certDescription.textContent = descriptions[certIndex];
+      certDescription.classList.add("visible"); // Показать описание
+    };
+
+    certPrev.addEventListener("click", () => {
+      certificates[certIndex].classList.remove("active");
+      certIndex = (certIndex - 1 + certificates.length) % certificates.length;
+      certificates[certIndex].classList.add("active");
+      updateDescription();
+    });
+
+    certNext.addEventListener("click", () => {
+      certificates[certIndex].classList.remove("active");
+      certIndex = (certIndex + 1) % certificates.length;
+      certificates[certIndex].classList.add("active");
+      updateDescription();
+    });
+
+    // Изначальное отображение описания для первого сертификата
+    updateDescription();
+  });
+</script>
+</body>
+</html>
