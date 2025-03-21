@@ -9,7 +9,7 @@ deploy_job:
     - echo "зашли в папку"
     - pwd
     - git config --global credential.helper store
-    - echo "https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.mopsiky.ru" > ~/.git-credentials
+    - echo "https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.mopsiky.ru/Mops/cvver2.git" > ~/.git-credentials
     - git fetch --all
     - git reset --hard origin/main
     - git pull origin main
