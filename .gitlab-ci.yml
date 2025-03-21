@@ -10,6 +10,7 @@ deploy_job:
     - pwd
     - git config --global credential.helper store
     - echo "https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.mopsiky.ru/Mops/cvver2.git" > ~/.git-credentials
+    - git remote set-url origin https://gitlab.mopsiky.ru/Mops/cvver2.git
     - git fetch --all
     - git reset --hard origin/main
     - git pull origin main
