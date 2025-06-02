@@ -5,23 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Резюме</title>
   <link rel="stylesheet" href="styles.css?v=1.3">
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();
-      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(99539257, "init", {
-      clickmap:true,
-      trackLinks:true,
-      accurateTrackBounce:true,
-      webvisor:true
-    });
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/99539257" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 <header>
@@ -36,20 +19,21 @@
 
 <section id="skills">
   <h2>Навыки</h2>
-  <p>Linux, GIT, GITlab, Docker, KVM, Ansible, Zabbix, Python, C++, Java</p>
+  <p>Linux, GIT, GITlab, Nginx, Docker, KVM, Ansible, Zabbix, Python, C++, Java, Prometheus, Grafana </p>
 </section>
 
 <section id="education">
   <h2>Образование</h2>
-  <p>Бакалвариат. РУТ(МИИТ),Информационные системы и технологии на транспорте, 2016-2020.<p>
-  <p>Магистратура. РУТ(МИИТ),Информационная аналитика и технология больших данных, 2021-2023.<p>
-  <p>Аспирантура. РУТ(МИИТ),Автоматизация и управление технологическими процессами и
+  <p>Бакалавриат. РУТ(МИИТ), Информационные системы и технологии на транспорте, 2016-2020.<p>
+  <p>Магистратура. РУТ(МИИТ), Информационная аналитика и технология больших данных, 2021-2023.<p>
+  <p>Аспирантура. РУТ(МИИТ), Автоматизация и управление технологическими процессами и
   производствами, 2023-2026.<p>
 </section>
 
 <section id="experience">
   <h2>Опыт работы</h2>
-  <p>Ваш опыт работы...</p>
+  <p>ТОП-Сервис, системный администратор, 2020-2021</p>
+  <p>РУТ(МИИТ), преподаватель,2022-н.в</p>
 </section>
 
 <section id="certificates">
@@ -57,12 +41,10 @@
   <div class="certificate-carousel">
     <button class="prev">&#10094;</button>
     <div class="carousel-images">
-      <img src="photo/cert1.jpg" alt="Сертификат 1" class="active">
-      <img src="photo/cert2.jpg" alt="Сертификат 2">
-      <img src="photo/cert3.png" alt="Сертификат 3">
+      <img src="photo/Certificate.jpg" alt="Сертификат 1" class="active">
     </div>
     <div class="description">
-      <p>Описание для Сертификат 1</p>
+      <p>Описание для сертификата 1</p>
     </div>
     <button class="next">&#10095;</button>
   </div>
@@ -70,12 +52,27 @@
 
 <section id="about">
   <h2>Обо мне</h2>
-  <p>Краткая информация о вас...</p>
+  <div class="about-content">
+    <p>
+      С 2020 по 2021 год работал системным администратором, где занимался развертыванием и поддержкой ИТ-инфраструктуры:
+    </p>
+    <ul>
+      <li>Настройка корпоративной сети, IP-телефонии и видеонаблюдения</li>
+      <li>Мониторинг инфраструктуры с помощью Zabbix</li>
+      <li>Администрирование почтовых серверов</li>
+    </ul>
+    <p>
+      После этого поступил в магистратуру, а затем в аспирантуру (2023), параллельно работая в университете.
+    </p>
+    <p>
+      Сейчас углубленно изучаю Linux, автоматизацию и DevOps-инструменты. Ищу возможности для профессионального роста в этой сфере.
+    </p>
+  </div>
   <div class="photo-carousel">
     <button class="prev">&#10094;</button>
-    <img src="/photo/photo1.png" alt="Фото 1" class="active">
-    <img src="/photo/photo2.jpg" alt="Фото 2">
-    <img src="/photo/photo3.png" alt="Фото 3">
+    <img src="/photo/photo_2025-06-02_20-46-52%20(3).jpg" alt="Фото 1" class="active">
+    <img src="/photo/photo_2025-06-02_20-46-52%20(2).jpg" alt="Фото 3">
+    <img src="/photo/photo_2025-06-02_20-46-52%20(4).jpg" alt="Фото 4">
     <button class="next">&#10095;</button>
   </div>
 </section>
@@ -83,9 +80,9 @@
 <section id="projects">
   <h2>Мои проекты</h2>
   <ul>
-    <li><a href="https://github.com/yourproject1">Проект 1</a></li>
-    <li><a href="https://github.com/yourproject2">Проект 2</a></li>
-    <li><a href="https://github.com/yourproject3">Проект 3</a></li>
+    <li><a href="https://github.com/pancakewithjam/UniverBot">Телеграм-бот</a></li>
+    <li><a href="https://github.com/pancakewithjam/my_temp">Мониторинг температуры Linux</a></li>
+    <li><a href="https://github.com/pancakewithjam/cv">Резюме</a></li>
   </ul>
 </section>
 
@@ -120,9 +117,7 @@
 
     // Карусель сертификатов с описанием
     const descriptions = [
-      "мой сертификат 1",
-      "мой сертификатик два",
-      "Описание для Сертификат 3"
+      "Курс по линуксу 1 часть, 2 часть будет завершена в конце июня",
     ];
     let certIndex = 0;
     const certificates = document.querySelectorAll(".certificate-carousel .carousel-images img");
@@ -149,7 +144,6 @@
       updateDescription();
     });
 
-    // Изначальное отображение описания для первого сертификата
     updateDescription();
   });
 </script>
